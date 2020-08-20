@@ -1,0 +1,33 @@
+server:
+  port: 8002
+
+spring:
+  application:
+    name: service8002
+  zipkin:
+      base-url: http://localhost:9411
+  sleuth:
+    sampler:
+    #采样率值介于 0 到 1 之间，1 则表示全部采集
+    probability: 1
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+
+feign:
+    client:
+        config:
+            feignName: #需要配置的FeignName
+                connectTimeout: 5000  #连接超时时间
+                readTimeout: 5000     #读超时时间设置
+                loggerLevel: full     #配置Feign的日志级别
+    hystrix:
+      enabled: true
+
+
+#mybatis:
+#  mapperLocations: classpath:mapper/*.xml
+#  type-aliases-package: com.atguigu.springcloud.entities    # 所有Entity别名类所在包
+
+
