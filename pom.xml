@@ -12,7 +12,6 @@
     <modules>
         <module>service1</module>
         <module>service2</module>
-        <module>common</module>
     </modules>
 
     <!-- 统一管理jar包版本 -->
@@ -59,6 +58,7 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
+            <!--swagger2-->
             <dependency>
                 <groupId>com.github.xiaoymin</groupId>
                 <artifactId>knife4j-spring-boot-starter</artifactId>

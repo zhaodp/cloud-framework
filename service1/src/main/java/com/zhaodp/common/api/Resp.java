@@ -1,4 +1,4 @@
-package com.zhaodp.api;
+package com.zhaodp.common.api;
 
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -14,7 +14,7 @@ import java.io.Serializable;
 @ApiModel(description = "返回信息")
 @Data
 @ToString
-public class R<T> implements Serializable {
+public class Resp<T> implements Serializable {
     private static final long serialVersionUID = 1L;
     @ApiModelProperty(value = "状态码", required = true)
     private int code;
@@ -23,34 +23,34 @@ public class R<T> implements Serializable {
     @ApiModelProperty(value = "返回消息", required = true)
     private String message;
 
-    private R(int resultCode, String msg) {
+    private Resp(int resultCode, String msg) {
         this(resultCode, null, msg);
     }
 
-    private R(int code, T data, String msg) {
+    private Resp(int code, T data, String msg) {
         this.code = code;
         this.data = data;
         this.message = msg;
     }
 
-    public static <T> R<T> success(String msg) {
-        return new R(ResultCode.SUCCESS.getCode(), msg);
+    public static <T> Resp<T> success(String msg) {
+        return new Resp(ResultCode.SUCCESS.getCode(), msg);
     }
 
-    public static <T> R<T> success(T data) {
+    public static <T> Resp<T> success(T data) {
         return success(data, "操作成功");
     }
 
-    public static <T> R<T> success(T data, String msg) {
-        return new R(ResultCode.SUCCESS.getCode(), data, msg);
+    public static <T> Resp<T> success(T data, String msg) {
+        return new Resp(ResultCode.SUCCESS.getCode(), data, msg);
     }
 
-    public static <T> R<T> fail(String msg) {
-        return new R(ResultCode.FAILURE.getCode(), msg);
+    public static <T> Resp<T> fail(String msg) {
+        return new Resp(ResultCode.FAILURE.getCode(), msg);
     }
 
-    public static <T> R<T> fail(int code, String msg) {
-        return new R(code, null, msg);
+    public static <T> Resp<T> fail(int code, String msg) {
+        return new Resp(code, null, msg);
     }
 
 }

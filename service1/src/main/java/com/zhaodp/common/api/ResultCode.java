@@ -1,4 +1,4 @@
-package com.zhaodp.api;
+package com.zhaodp.common.api;
 
 /**
  * @Author zhaodp
