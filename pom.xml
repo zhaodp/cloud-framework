@@ -25,8 +25,7 @@
         <lombok.version>1.16.18</lombok.version>
         <mysql.version>5.1.47</mysql.version>
         <druid.version>1.1.17</druid.version>
-        <swagger.version>2.9.2</swagger.version>
-        <swagger.models.version>1.5.21</swagger.models.version>
+        <knife4j.version>2.0.4</knife4j.version>
         <spring.boot.version>2.2.9.RELEASE</spring.boot.version>
         <mybatis.plus.version>3.3.2</mybatis.plus.version>
         <spring.cloud.version>Hoxton.SR7</spring.cloud.version>
@@ -59,6 +58,11 @@
                 <version>${spring.cloud.alibaba.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>com.github.xiaoymin</groupId>
+                <artifactId>knife4j-spring-boot-starter</artifactId>
+                <version>${knife4j.version}</version>
             </dependency>
             <dependency>
                 <groupId>mysql</groupId>
