@@ -6,8 +6,6 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.experimental.Accessors;
 
-import java.util.Map;
-
 @Getter
 @Setter
 @Accessors(chain = true)
@@ -25,7 +23,7 @@ public class R<T> {
     /**
      * 调用是否成功标识，0：成功，-1:系统繁忙，此时请开发者稍候再试 详情见[ExceptionCode]
      */
-    @ApiModelProperty(value = "响应编码:0/200-请求处理成功")
+    @ApiModelProperty(value = "响应编码:0-处理成功 非0:处理失败")
     private int code;
 
     /**
@@ -40,16 +38,7 @@ public class R<T> {
     @ApiModelProperty(value = "提示消息")
     private String message = "操作成功";
 
-    @ApiModelProperty(value = "请求路径")
-    private String path;
-    /**
-     * 附加数据
-     */
-    @ApiModelProperty(value = "附加数据")
-    private Map<String, Object> extra;
-
     private R() {
-        super();
     }
 
     public R(int code, T data, String msg) {
@@ -60,6 +49,7 @@ public class R<T> {
 
     /**
      * 请求成功
+     *
      * @param <E>
      * @return
      */
@@ -100,6 +90,10 @@ public class R<T> {
 
     public static <E> R<E> error() {
         return error(OPERATION_EX_CODE, DEF_ERROR_MESSAGE);
+    }
+
+    public static <E> R<E> error(IResultCode resultCode) {
+        return error(resultCode.getCode(), resultCode.getMessage());
     }
 
     public static <E> R<E> error(String msg) {

@@ -1,4 +1,4 @@
-package com.zhaodp.req;
+package com.zhaodp.req.user;
 
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -13,7 +13,7 @@ import javax.validation.constraints.NotNull;
  */
 @Data
 @ApiModel
-public class AddUserReq {
+public class UserCreateReq {
     @ApiModelProperty(name = "姓名", required = true)
     @NotBlank(message = "姓名不能为空")
     private String name;

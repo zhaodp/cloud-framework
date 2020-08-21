@@ -12,6 +12,8 @@ import org.springframework.validation.ObjectError;
 import java.util.List;
 
 /**
+ * Controller参数校验自定义结果返回
+ *
  * @Author zhaodp
  * @Date 2020-8-21
  */

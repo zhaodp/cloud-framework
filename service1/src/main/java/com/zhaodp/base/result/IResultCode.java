@@ -2,15 +2,16 @@ package com.zhaodp.base.result;
 
 public interface IResultCode {
     /**
-     * 异常编码
+     * 编码
      *
      * @return
      */
     int getCode();
 
     /**
-     * 异常消息
+     * 消息
+     *
      * @return
      */
-    String getMsg();
+    String getMessage();
 }

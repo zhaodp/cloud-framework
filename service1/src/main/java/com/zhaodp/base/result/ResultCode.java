@@ -79,11 +79,11 @@ public enum ResultCode implements IResultCode {
     ;
 
     private int code;
-    private String msg;
+    private String message;
 
     ResultCode(int code, String msg) {
         this.code = code;
-        this.msg = msg;
+        this.message = msg;
     }
 
     @Override
@@ -92,18 +92,18 @@ public enum ResultCode implements IResultCode {
     }
 
     @Override
-    public String getMsg() {
-        return msg;
+    public String getMessage() {
+        return message;
     }
 
 
     public ResultCode build(String msg, Object... param) {
-        this.msg = String.format(msg, param);
+        this.message = String.format(msg, param);
         return this;
     }
 
     public ResultCode param(Object... param) {
-        msg = String.format(msg, param);
+        message = String.format(message, param);
         return this;
     }
 }
