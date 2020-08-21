@@ -5,7 +5,7 @@ import com.github.davidfantasy.mybatisplus.generatorui.mbp.NameConverter;
 public class GeberatorUIServer {
 
     public static void main(String[] args) {
-        GeneratorConfig config = GeneratorConfig.builder().jdbcUrl("jdbc:mysql://localhost:3306/db_tenant")
+        GeneratorConfig config = GeneratorConfig.builder().jdbcUrl("jdbc:mysql://localhost:3306/db_cloud_framework")
                 .userName("root")
                 .password("123456")
                 .driverClassName("com.mysql.jdbc.Driver")
@@ -29,7 +29,7 @@ public class GeberatorUIServer {
                         return this.entityNameConvert(tableName) + "Controller";
                     }
                 })
-                .basePackage("com.zhaodp.demo")
+                .basePackage("com.zhaodp.user")
                 .port(8068)
                 .build();
         MybatisPlusToolsApplication.run(config);

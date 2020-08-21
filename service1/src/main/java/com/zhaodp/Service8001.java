@@ -11,7 +11,7 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
  */
 @SpringBootApplication
 @EnableDiscoveryClient
-@MapperScan("com.zhaodp.*.mapper*")
+@MapperScan("com.zhaodp.dao")
 public class Service8001 {
     public static void main(String[] args) {
         SpringApplication.run(Service8001.class, args);

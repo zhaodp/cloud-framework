@@ -4,15 +4,18 @@ server:
 spring:
   application:
     name: service8001
-
+  jackson:
+    default-property-inclusion: non_null
+    time-zone: GMT+8
+    date-format: yyyy-MM-dd HH:mm:ss
   cloud:
     nacos:
       discovery:
         server-addr: localhost:8848
   datasource:
-    url: jdbc:mysql://172.16.170.56:3306/db_tenant?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&useSSL=false&zeroDateTimeBehavior=convertToNull&tinyInt1isBit=false
-    username: djy
-    password: djy123
+    url: jdbc:mysql://localhost:3306/db_cloud_framework?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&useSSL=false&zeroDateTimeBehavior=convertToNull&tinyInt1isBit=false
+    username: root
+    password: 123456
     driver-class-name: com.mysql.jdbc.Driver
     platform: mysql
     type: com.alibaba.druid.pool.DruidDataSource
@@ -39,15 +42,13 @@ spring:
     connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000
     # 合并多个DruidDataSource的监控数据
     #useGlobalDataSourceStat: true
-  devtools:
-    add-properties: false
 
 #mybatis
 mybatis-plus:
   mapper-locations: classpath:/mapper/*Mapper.xml
   #实体扫描，多个package用逗号或者分号分隔
-  type-aliases-package: com.zhaodp.demo.entity
-  type-enums-package: com.zhaodp.demo.entity.enums
+  type-aliases-package: com.zhaodp.**.entity
+  #type-enums-package: com.zhaodp.entity.enums
   global-config:
     # 数据库相关配置
     db-config:
