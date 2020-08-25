@@ -28,18 +28,18 @@ public enum ResultCode implements IResultCode {
     SUCCESS(0, "成功"),
     SYSTEM_BUSY(-1, "系统繁忙~请稍后再试~"),
     SYSTEM_TIMEOUT(-2, "系统维护中~请稍后再试~"),
-    PARAM_EXCEPTION(-3, "参数类型解析异常"),
-    SQL_EXCEPTION(-4, "运行SQL出现异常"),
-    NULL_POINT_EXCEPTION(-5, "空指针异常"),
-    ILLEGALA_ARGUMENT_EXCEPTION(-6, "无效参数异常"),
-    MEDIA_TYPE_EXCEPTION(-7, "请求类型异常"),
+    PARAM_EX(-3, "参数类型解析异常"),
+    SQL_EX(-4, "运行SQL出现异常"),
+    NULL_POINT_EX(-5, "空指针异常"),
+    ILLEGALA_ARGUMENT_EX(-6, "无效参数异常"),
+    MEDIA_TYPE_EX(-7, "请求类型异常"),
     LOAD_RESOURCES_ERROR(-8, "加载资源出错"),
     BASE_VALID_PARAM(-9, "统一验证参数异常"),
-    OPERATION_EXCEPTION(-10, "操作异常"),
+    OPERATION_EX(-10, "操作异常"),
     SERVICE_MAPPER_ERROR(-11, "Mapper类转换异常"),
 
 
-    OK(200, "OK"),
+//    OK(200, "OK"),
     BAD_REQUEST(400, "错误的请求"),
     /**
      * {@code 401 Unauthorized}.
